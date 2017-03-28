@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<!-- jQuery -->
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+	<!-- moment -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.4.1/moment-timezone-with-data.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.4/jstz.min.js'></script>
+
+	<!-- fullcalendar -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/gcal.js'></script>
+<script type="text/javascript" src='http://go.pardot.com/l/36402/2015-10-28/2zvggx/36402/135843/ics.js'></script>
+
+	<!-- qtip -->
+<script src='http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.1/jquery.qtip.min.js'></script>
+
+    <!-- Bootstrap Core JavaScript -->
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+
+    <!-- Scrolling Nav JavaScript -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+<script src='http://www2.pardot.com/l/1/2016-01-04/3h6s5n/1/177291/scrolling_nav.js'></script>	
+
+    <!-- fancybox video player -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js'></script>
+<script src='https://fast.wistia.com/assets/external/E-v1.js' async></script>
+	
+
+    <!-- Bootstrap Core CSS -->
+<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel="stylesheet">
+
+    <!-- fullcalendar CSS -->
+<link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.css' rel="stylesheet" />   
+
+    <!-- qtip CSS -->
+<link href='http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.1/jquery.qtip.min.css' rel="stylesheet" />
+
+    <!-- Font awesome CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- fancybox video CSS -->
+<link href='https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css' rel="stylesheet" />
+
+    <!-- Main CSS file, including scrolling link-->
+<link href='http://www2.pardot.com/l/1/2015-12-31/3h5s6d/1/177277/scrolling_nav.css' rel="stylesheet">
+    
+        <!-- Pardot Themes -->
+<link media="all" type="text/css" href="http://www.pardot.com/content/themes/pardot/style.css?ver=0.7.8" id="pardot-style-css" rel="stylesheet">  
+<link media="all" type="text/css" href="http://www2.pardot.com/css/salesforce-sans.css" id="pardot-style-css" rel="stylesheet">  	
+
+</head>
+
+<style>
+	
+/* success community */
+
+.topic-box {
+    padding: 20px;
+    border: solid 1px #c4c4c4;
+    border-radius: 6px;
+    margin: 0 20px 20px 0;
+}
+
+.topic-box-special {
+    border: 0;
+    background-color: #f7f9fb;
+    width: 500px;
+}
+
+.item-content-secondary {
+    display: block;
+    float: left;
+    padding-top: 20px;
+}
+
+a.an-item .item-content-primary, .topic-box .item-content-primary {
+    margin-left: 74px;
+    padding: 5px 20px 0 10px;
+    font-size: 90%;
+}
+
+.item-content-primary .user-name {
+    font-weight: bold;
+}
+
+.item-content-secondary .user-pic img {
+    width: 64px;
+    height: 64px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 50%;
+}
+
+.item-extra {
+    font-size: 80%;
+}
+
+.item-title {
+    font-size: 90%;
+}
+
+.item-content-primary-1 {
+    margin-bottom: .6em;
+}	
+
+h4.h4-success {
+    text-transform: uppercase;
+    line-height: 130%;
+    margin-bottom: .5em;
+}
+	
+	
+</style>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top"><img src="http://www.pardot.com/content/themes/pardot/assets/images/pardot-logo.png"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#video">Session Recordings</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#sessions">Sessions</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#community">Success Community</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#testimonials">Reviews</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#team">Team</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Section -->
+    <section id="intro" class="intro-section image-background" style="background-image: url(http://www2.pardot.com/l/1/2016-01-18/3j5bjv/1/177519/IMG_0410.jpg);" >
+	    
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+	                <header class="intro-header">
+						<h1 class="header-style">Pardot's Client Advocate Team</h1>
+						<p>As a valued customer our team is here to help guide with Pardot strategy related questions. <br>Drop into our daily sessions and talk LIVE with our Client Advocate team: </p>
+						<a class="button orange-button page-scroll" href="#sessions">Join our Office Hours!</a>
+					</header>	
+                </div>
+            </div>
+        </div>     
+    </section>
+    
+    		<section class="home-news-cta">
+	    		<div class="container">
+					<div class="callout-text">The Client Advocate team is here to help you achieve your marketing goals by providing consultative advice on Pardot strategy, marketing automation best practices, and industry trends
+					</div>
+	    		</div>
+			</section>
+			
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>How we can help ?</h2>
+    <div id="strategy-setting" class="row section-lander image-left">
+		<div class="col-sm-4">
+			<img src="http://www2.pardot.com/l/1/2016-01-02/3h6qjj/1/177281/ADV_strategy.jpg" class="zoom-image">
+		</div>
+		<div class="col-sm-8">
+			<h3 class="blue-font">Strategy / Goal Setting</h3>
+			<p>We can help you decide how best to use Pardot for your specific use cases, and discuss your marketing automation goals.</p>
+				<ul>
+					<li>Strategize with our team on utilizing Pardot throughout your Marketing and Sales funnels</li>
+					<li>Define goals with our team to maximize your conversion rate</li>
+					<li>Seek our expert advise on using Pardot with Salesforce</li>
+				</ul>
+			<a class="read-more" data-toggle="modal" data-target="#strategy_Modal" href="">Sign up here <span class="glyphicon glyphicon-menu-right"></span></a>				
+		</div>
+		<!-- popup form - Strategy / Goal Setting -->
+		<div id="strategy_Modal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h3 class="modal-title blue-font">Sign up for a Strategy / Goal Setting Session!</h3>
+		      </div>
+		      <div class="modal-body">
+		        	<iframe src="http://www2.pardot.com/l/1/2016-01-11/3j1v2x" width="100%" height="600" type="text/html" frameborder="0" allowTransparency="true" style="border:0;"></iframe>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!-- end popup form -->
+	</div>
+						
+	<div id="usage-assessment" class="row section-lander image-left">
+		<div class="col-sm-4">
+			<img src="http://www2.pardot.com/l/1/2016-01-02/3h6qjq/1/177287/ADV_.improve.jpg" class="zoom-image">
+	    </div>
+		<div class="col-sm-8">
+			<h3 class="blue-font">Usage Assessment / Improvement</h3>
+            <p>Maximize your use of Pardot by understanding what’s in your account now.</p>
+				<ul>
+					<li>What is being used? What isn’t being used? What should I be using?</li>
+					<li>Review the features your using well and where you could dive deeper</li>
+					<li>Account Audit's provide definitive recommendations that will align the Pardot tools with your team’s goals</li>
+				</ul>
+			<a class="read-more" data-toggle="modal" data-target="#audit_Modal" href="">Register for an Account Audit here <span class="glyphicon glyphicon-menu-right"></span></a>			
+		</div>
+		<!-- popup form - Account Audit -->
+		<div id="audit_Modal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h3 class="modal-title blue-font">Sign up for an Account Audit!</h3>
+		      </div>
+		      <div class="modal-body">
+		        	<iframe src="http://www2.pardot.com/l/1/2016-01-08/3j19ms" width="100%" height="500" type="text/html" frameborder="0" allowTransparency="true" style="border:0;"></iframe>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!-- end popup form -->
+	</div>
+
+	<div id="product-feedback" class="row section-lander image-left">
+		<div class="col-sm-4">
+			<img src="http://www2.pardot.com/l/1/2016-01-02/3h6qjn/1/177285/ADV_feedback.jpg" class="zoom-image">
+	    </div>
+		<div class="col-sm-8">
+			<h3 class="blue-font">Product / Service Feedback</h3>
+            <p>We give and gather feedback.</p>
+				<ul>
+					<li>We can give our recommendations on your newly created templates, drip programs or other assets</li>
+					<li>We appreciate your feedback as well! Love it or loathe it, we want to hear about it</li>
+					<li>Become a reference or write a review and some Pardot swag may be in your future</li>
+				</ul>
+			<a class="read-more" data-toggle="modal" data-target="#feedback_Modal" href="">Send us your Feedback <span class="glyphicon glyphicon-menu-right"></span></a>		
+		</div>
+		<!-- popup form - feedback -->
+		<div id="feedback_Modal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h3 class="modal-title blue-font">Send us your Feedback</h3>
+		      </div>
+		      <div class="modal-body">
+		        	<iframe src="http://www2.pardot.com/l/1/2016-01-11/3j1svz" width="100%" height="500" type="text/html" frameborder="0" allowTransparency="true" style="border:0;"></iframe>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!-- end popup form -->
+	</div>
+
+	<div id="thought-leadership" class="row section-lander image-left">
+		<div class="col-sm-4">
+			<img src="http://www2.pardot.com/l/1/2016-01-02/3h6qjl/1/177283/ADV_thought.jpg" class="zoom-image">
+		</div>
+		<div class="col-sm-8">
+			<h3 class="blue-font">Thought Leadership</h3>
+            <p>As industry thought leaders, we help keep you up to date on industry news and trends.</p>
+				<ul>
+					<li>Articles on industry trends are regularly published on Pardot's Blog</li>
+					<li>Expertise is shared from across the industry, Salesforce and Pardot</li>
+					<li>Make sure you are opted in to our email updates</li>
+				</ul>
+			<a class="read-more" href="http://www.pardot.com/blog/">Learn More from our Blog<span class="glyphicon glyphicon-menu-right"></span></a>									
+		</div>
+	</div>
+
+	<div id="office-hours" class="row section-lander image-left">
+		<div class="col-sm-4">
+			<img src="http://www2.pardot.com/l/1/2016-01-02/3h6qjg/1/177279/ADV_OOH.jpg" class="zoom-image">
+	    </div>
+		<div class="col-sm-8">
+			<h3 class="blue-font">Open Office Hours / New User Demo's</h3>
+            <p>Open Office Hours are a great way for Pardot clients to get strategic advice and best-practice live coaching.				
+	            <ul>
+					<li>Live, unscripted Q&A with the Pardot Client Advocate team and other Pardot customers</li>
+					<li>Interact with and learn from other Pardot customers on the line</li>
+					<li>Drop into our daily sessions at any time during the hour for as long or as little as you like</li>
+				</ul>
+			<a class="read-more page-scroll" href="#sessions">Sign up here <span class="glyphicon glyphicon-menu-right"></span></a>									
+		</div>
+	</div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Topical Session Recordings Section -->
+    <section id="video" class="video-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Recent Topical Session Recordings</h2>            
+                    	<div id='player'></div>
+	                    	<div class="video_box col-xs-12 col-sm-6 col-md-3 col-lg-3">
+				 				<div class="video_name">View the complete library here <span class="glyphicon glyphicon-new-window"></span></div>
+				 					<a class="video_thumb" href="https://pardot.wistia.com/projects/kz5clc3mub" target="_blank">
+				 						<i class="fa fa-youtube-play"></i>
+				 					</a>
+				 			</div>	
+						
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Calendar Section -->
+    <section id="sessions" class="sessions-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Client Services Sessions</h2>
+                    <p>These sessions bring together Client Advocate Office Hours, PardotNow trainings, Thought Leadership Webinars and Live Events. They are designed for current Pardot customers who have already completed implementation. <span id="bluespan">Ready to register? Just click the calendar session you would like to attend</span></p>
+               
+					<h3 id="sticky-anchor">Types of Sessions:</h3>
+					
+					<div class="container" id="sticky">
+					<div class="row" id="slide">
+					<form class="form-group" id="sessionform" role="form">
+					<div class="col-sm-6 col-lg-3">
+					<h4 class="blue-font">Discuss Strategy / Best Practices?</h4>
+					<label class="checkbox" for="OOH"><input checked="checked" id="OOH" name="OOH" type="checkbox" />Open Office Hours </label> <label class="checkbox" for="TOH"><input checked="checked" id="TOH" name="TOH" type="checkbox" />Topical Office Hours </label></div>
+					
+					<div class="col-sm-6 col-lg-3">
+					<h4 class="blue-font">New to Pardot?</h4>
+					<label class="checkbox" for="introcall"><input checked="checked" id="introcall" name="introcall" type="checkbox" />Introduction to Pardot Services</label> <label class="checkbox" for="newuser"><input checked="checked" id="newuser" name="newuser" type="checkbox" />New User Overview </label></div>
+					
+					<div class="col-sm-6 col-lg-3">
+					<h4 class="blue-font">Learn with Pardot?</h4>
+					<label class="checkbox" for="training"><input checked="checked" id="training" name="training" type="checkbox" />PardotNow Live Training</label> <label class="checkbox" for="webinars"><input checked="checked" id="webinars" name="webinars" type="checkbox" />Thought Leadership Webinars</label></div>
+					
+					<div class="col-sm-6 col-lg-3">
+					<h4 class="blue-font">Meet with Pardot?</h4>
+					<label class="checkbox" for="events"><input checked="checked" id="events" name="events" type="checkbox" />World Tour / Dreamforce Events</label> <label class="checkbox" for="usergroup"><input checked="checked" id="usergroup" name="usergroup" type="checkbox" />User Groups</label></div>
+					</form>
+					
+					</div>
+					<label id="slidetog" class="blue-font">Filter Sessions
+					 	<i class="fa fa-chevron-right"></i>
+					</label>
+					</div>
+					<p id="tmz"></p>
+                    <div id="calendar">&nbsp;</div>
+					<span id="calendar_stop"></span> 
+	<!-- Expandable -->                    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+	        <a class="clearfix" data-toggle="collapse" data-target="#collapse-content" role="button" aria-expanded="true">
+            	<h3 class="panel-title">Open Office Hour FAQ's</h3>
+				<i class="fa fa-chevron-down pull-right"></i>
+				<i class="fa fa-chevron-up pull-right"></i>
+			</a>
+        </div>
+        <div id="collapse-content" class="panel-collapse collapse in">
+            <div class="panel-body">
+	            <ul>
+		            <li>
+		            	<h4>Whom are Open Office Hours for?</h4>
+		            	<p>They are designed for current Pardot customers who have already completed implementation.</p>
+		            </li>
+		            <li>
+		            	<h4>What is the format?</h4>
+		            	<p>Open Office Hours are an open line where clients can get answers to their questions on a first-come-first-serve basis. Every session is unscripted, so Advocates can dig into your questions and you can also learn best practices from other Pardot users. Just pose your question to the organizer via the GoToMeetings chat window to be put in queue. On busier calls, advocates may limit discussion around each query to ten minutes. If more time is needed, an Advocate will follow up with you after the call.</p>
+		            </li>
+		            <li>
+		            	<h4>How long do they take?</h4>
+		            	<p>That is up to you. Some clients stay for the full hour to learn from other clients questions while others join for just as long as it takes to get their own questions answered.</p>
+		            </li>
+		             <li>
+		            	<h4>Will I be required to share my company name or share my screen?</h4>
+		            	<p>We understand privacy is a concern for many clients, so while the Advocates may ask for your name, company name and contact information, you can share this with us privately via the chat; we will not share this information. Sometimes we may ask you to share your screen to get a better understanding of your query. We will always ask you before we do this, and if you are not comfortable sharing your screen, we can walk through examples in our Pardot account.</p>
+		            </li>
+	            </ul>
+            </div>
+        </div>
+    </div>
+	<!-- end Expandable -->                                      
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+         <!-- Success Community Section -->
+    <section id="community" class="community-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Success Community</h2>
+                    <div class="topic-box topic-box-special col-md-6">
+	                    <h4 class="h4-success blue-font">Pardot Marketing Automation</h4>
+	                    <p id="success_sub" class="p-success"></p>
+                        <a class="button orange-button" href="https://login.salesforce.com/services/auth/sso/00D300000000iTzEAI/community?community=https%3A%2F%2Fsuccess.salesforce.com%2F&amp;startURL=%2FuserSetup%3Fgt%3Dhttps%253A%252F%252Fsuccess.salesforce.com%252F_ui%252Fcore%252Fchatter%252Fgroups%252FGroupProfilePage%253Fg%253D0F9300000001qUiCAI" target="_blank">Join the Conversation</a>
+                    </div>            
+					<div class="topic-box col-md-6">
+						<h4 class="h4-success blue-font">Recent Posts</h4>
+						<div id="feed_output"></div>
+					</div>
+						
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+     <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Testimonials</h2>
+					<div class="client-testimonial col-md-6">
+						<div class="client-image">
+							<img scale="0" src="http://www2.pardot.com/l/1/2016-01-11/3j1sq4/1/177377/Grayson_Daniels_.jpg">
+						</div>
+						<div class="testimonial-content">
+							<div class="client-quote">“You can tell they love what they do. Ask as many questions as possible - they will be glad to help.” - August 2015</div>
+							<div class="client-cite">
+								<div class="name">Grayson Daniels</div>
+								<div class="title">Senior Marketing Specialist</div>
+								<div class="company"><a href="http://www.cheshireimpact.com/" target="_blank">Chesire Impact</a></div>
+							</div>
+						</div>
+					</div>	
+					
+					<div class="client-testimonial col-md-6">
+						<div class="client-image">
+							<img scale="0" src="http://www2.pardot.com/l/1/2016-01-11/3j1rpv/1/177373/Rachel_Barnes___Halftime_Institute.jpg">
+						</div>
+						<div class="testimonial-content">
+							<div class="client-quote">“The Pardot Office Hours is a fabulous value. As a new user and admin, I use it all the time. The format is excellent. I appreciate when the Advocate team answers my questions and then includes links to additional documentation or training." - December 2015 </div>
+							<div class="client-cite">
+								<div class="name">Rachel Barnes</div>
+								<div class="title">Director of Strategic Technology</div>
+								<div class="company"><a href="http://halftimeinstitute.org/" target="_blank">Halftime Institute</a></div>
+							</div>
+						</div>
+					</div>	
+					
+					<div class="client-testimonial col-md-6">
+						<div class="client-image">
+							<img scale="0" src="http://www2.pardot.com/l/1/2016-01-11/3j1swz/1/177383/Dean_Wray_Profile_RevenueWire_Pardot_Testimonial.jpg">
+						</div>
+						<div class="testimonial-content">
+							<div class="client-quote">“I love the fact that Pardot is forward thinking enough to have this role. We will continue to use the Client Advocate service and look forward to seeing how Pardot can help us reach our goals."</div>
+							<div class="client-cite">
+								<div class="name">Dean Wray</div>
+								<div class="title">Senior Marketing Operations Strategist</div>
+								<div class="company"><a href="https://www.revenuewire.com/" target="_blank">RevenueWire</a></div>
+							</div>
+						</div>
+					</div>	
+					
+					<div class="client-testimonial col-md-6">
+						<div class="client-image">
+							<img scale="0" src="http://www2.pardot.com/l/1/2016-01-11/3j1szg/1/177385/Andy_Lakin.jpg">
+						</div>
+						<div class="testimonial-content">
+							<div class="client-quote">“These office hours are a HUGE help. I implement Pardot for customers every day and you guys make my life so much easier. Always very helpful and go the extra mile to make sure my questions are answered. Thank you Thank you Thank you."</div>
+							<div class="client-cite">
+								<div class="name">Andy Lakin</div>
+								<div class="title">Solution Architect (<a href="http://certification.salesforce.com/pardot" target="_blank">Certified Pardot Consultant</a>)</div>
+								<div class="company"><a href="http://torrentconsulting.com/" target="_blank">Torrent Consulting</a></div>
+							</div>
+						</div>
+					</div>	
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Client Advocate Team</h2>
+					<p>Meet the Pardot Client Advocate Team! With advocates in Atlanta, London, Sydney, Dublin, Portland and San Fransisco. We are an international team of marketing automation experts, here to help you maximize Pardot to achieve your marketing goals. Take a look below to put faces with the names you’ll regularly see.<p>                 
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s1g/1/177221/Adam_Waid_Profile.jpg">
+						</div>
+						<div class="team-member team-name">Adam Waid</div>
+						<div class="team-member team-role">Snr. Manager</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s1l/1/177225/Ginny_Richardson_Profile.jpg">
+						</div>
+						<div class="team-member team-name">Ginny Richardson</div>
+						<div class="team-member team-role">People Manager</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s1n/1/177227/Josie_Harvey_Profile.jpg">
+						</div>
+						<div class="team-member team-name">Josie Harvey</div>
+						<div class="team-member team-role">Team Lead</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s2l/1/177255/Nicole_Conley_Profile.jpg">
+						</div>
+						<div class="team-member team-name">Nicole Conley</div>
+						<div class="team-member team-role">Team Lead</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s38/1/177275/Camille_Barnet_1.jpg">
+						</div>
+						<div class="team-member team-name">Camille Barnet</div>
+						<div class="team-member team-role">Client Advocate - AMER WC</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s36/1/177273/Yasmin_Schmid.jpg">
+						</div>
+						<div class="team-member team-name">Yasmin Schmid</div>
+						<div class="team-member team-role">Client Advocate - APAC</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2016-01-06/3h7mp8/1/177327/Sammy_Pang.jpg">
+						</div>
+						<div class="team-member team-name">Sammi Pang</div>
+						<div class="team-member team-role">Client Advocate - APAC</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s34/1/177271/Dane_McKinley.jpg">
+						</div>
+						<div class="team-member team-name">Dane McKinley</div>
+						<div class="team-member team-role">Client Advocate - AMER WC</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s2d/1/177247/Rob_Valdez_Profile.jpg">
+						</div>
+						<div class="team-member team-name">Rob Valdez</div>
+						<div class="team-member team-role">Client Advocate - AMER WC</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s1j/1/177223/Hannah_Freeman.jpg">
+						</div>
+						<div class="team-member team-name">Hannah Freeman</div>
+						<div class="team-member team-role">Snr. Client Advocate</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s2v/1/177263/Kylie_Nickles.jpg">
+						</div>
+						<div class="team-member team-name">Kylie Nickles</div>
+						<div class="team-member team-role">Snr. Client Advocate</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s2s/1/177261/Lewis__Richard.jpg">
+						</div>
+						<div class="team-member team-name">Richard Lewis</div>
+						<div class="team-member team-role">Snr. Client Advocate</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s2j/1/177253/Jessica_Marsh_Profile.jpg">
+						</div>
+						<div class="team-member team-name">Jessica Marsh</div>
+						<div class="team-member team-role">Client Advocate - EMEA</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s24/1/177241/Clare_Kelly_Profile.jpg">
+						</div>
+						<div class="team-member team-name">Clare Kelly</div>
+						<div class="team-member team-role">Client Advocate - EMEA</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s26/1/177243/Paymaun_Rezai_Profile.jpg">
+						</div>
+						<div class="team-member team-name">Paymaun Rezai</div>
+						<div class="team-member team-role">Client Advocate - AMER WC</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s1x/1/177235/Virginia_Baaklini_Profile.jpg">
+						</div>
+						<div class="team-member team-name">Virginia Baaklini</div>
+						<div class="team-member team-role">Client Advocate - AMER EC</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s1z/1/177237/Lindsay_Stanford_Profile.jpg">
+						</div>
+						<div class="team-member team-name">Lindsay Stanford</div>
+						<div class="team-member team-role">Client Advocate - AMER EC</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s22/1/177239/Jessica_Williams_Profile.jpg">
+						</div>
+						<div class="team-member team-name">Jessica Williams</div>
+						<div class="team-member team-role">Client Advocate - AMER EC</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s1q/1/177229/Leigh_Falgoust_Profile.jpg">	
+						</div>
+						<div class="team-member team-name">Leigh Falgoust</div>
+						<div class="team-member team-role">Client Advocate - AMER EC</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s1s/1/177231/Cristina_Moscoso_Profile.jpg">
+						</div>
+						<div class="team-member team-name">Cristina Moscoso</div>
+						<div class="team-member team-role">Client Advocate - AMER EC</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s1v/1/177233/Jazmyne_Dodd_Profile.jpg">
+						</div>
+						<div class="team-member team-name">Jazmyne Dodd</div>
+						<div class="team-member team-role">Client Advocate - AMER EC</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s28/1/177245/Caitlin_Clark_Howell_Profile.jpg">
+						</div>
+						<div class="team-member team-name">Caitlin Clark-Howell</div>
+						<div class="team-member team-role">Client Advocate - AMER WC</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s2b/1/177249/Molly_Morris_Futrell_Profile.jpg">
+						</div>
+						<div class="team-member team-name">Molly Morris Futrell</div>
+						<div class="team-member team-role">Client Advocate - AMER EC</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s2g/1/177251/David_DiGiammarino_Profile.jpg">
+						</div>
+						<div class="team-member team-name">David DiGiammarino</div>
+						<div class="team-member team-role">Client Advocate - AMER WC</div>
+					</div>
+					
+					<div class="view-team-member col-xs-6 col-sm-3 col-md-2 col-lg-2">
+						<div class="field--name-field-ot-image">
+							<img src="http://www2.pardot.com/l/1/2015-12-31/3h5s32/1/177269/Ami_Kamei_Milligan.jpg">
+						</div>
+						<div class="team-member team-name">Ami Kamei-Milligan</div>
+						<div class="team-member team-role">Client Advocate - AMER WC</div>
+					</div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>    
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row row-centered">
+                <div class="col-lg-12">
+                    <h2>Contact us</h2>
+                    <h3 class="blue-font"> What is your question regarding?</h3>
+								<div class="contact-boxes col-xs-12 col-sm-6 col-md-3 col-lg-3">
+									<h4>Get advise on Pardot Strategy or Best Practises</h4>
+									<i class="fa fa-puzzle-piece fa-5x"></i>
+									<p>Join our Office Hours <span class="glyphicon glyphicon-menu-right"></span></p>
+									<a class="contact-a page-scroll" href="#sessions"></a>
+								</div>
+								
+								<div class="contact-boxes col-xs-12 col-sm-6 col-md-3 col-lg-3">
+									<h4>Fix an issue or get Technical expertise</h4>
+									<i class="fa fa-life-ring fa-5x"></i>
+									<p>Raise a Support Ticket <span class="glyphicon glyphicon-new-window"></span></p>
+									<a class="contact-a" href="https://pardot.desk.com/customer/portal/private/cases" target="_blank"></a> 
+								</div>
+								
+								<div class="contact-boxes col-xs-12 col-sm-6 col-md-3 col-lg-3">
+									<h4>Engage with other Pardot users</h4>
+									<i class="fa fa-commenting-o fa-5x"></i>
+									<p>Contribute on our Community <span class="glyphicon glyphicon-new-window"></span></p>
+									<a class="contact-a" href="http://www2.pardot.com/success" target="_blank"></a> 
+								</div>
+								
+								<div class="contact-boxes col-xs-12 col-sm-6 col-md-3 col-lg-3">
+									<h4>Grow your Pardot Knowledge</h4>
+									<i class="fa fa-graduation-cap fa-5x"></i>
+									<p >Visit Pardot's Training Portal  <span class="glyphicon glyphicon-new-window"></span></p>
+									<a class="contact-a" href="http://www.pardot.com/training" target="_blank"></a> 
+								</div>
+                           
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="social-row">
+			<ul class="inline">
+				<li><a href="http://www.pardot.com/feed/" class="rss" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="40" height="40" viewBox="0 0 40 40">
+							<image xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABZVBMVEUAAACZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZkAAAAtTpNtAAAAdXRSTlMABUCEtt30JJPs++HSGqX8+KxkKARn8udyD3EIpvmFCsEzxxMJrsuxiVAQ0EPGMoGozf0DRqT6ugsep8ner8igYRFR8bf3lRQu6X9JLyyDuPBfV7/UOpHrEpCt9uSy1kWZtFNdDYDoB/Oc1Y6rvMTAks+e4I+/0MbCAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAhNJREFUOMuNlWdj2kAMhgW2iVk2KwYDxozQkc60pSOli+6Z7ibd6d6Lvv+/OmPgjCG1vsi6e25onEwkSyyuqFoCSGiqEo/RIlnSkwBS6UwmneKPpL40F8saJnL5QrEkjFKxkM/BNLJhbtlCuWLLI3a1DGt5BqvV4TTc2cVuw0G9FljchNaad5+WhqZ0TK2Jdme+g502mtM962i7tEDcNuoTP6B1aKF0NPgeZS2nRTtIy7FGUTLQoB2lAcPLh1leGQ10d+3es3c1DK6UTZEjHVV/YB/nDU53f4isQuc6SOZsGWQ5cHAGtHPJGMWRH9uHDq/lPPKIcjRI5hEnBQVppHasd1ygJ04GwAIUUlEMrj61LsjTgQwUoVI/VRqbZ86eO3+B9eAik5fk00upPiXSE1M4c/nKVaJr1/nrhrxlOkHIBEAu7JtEtyzAvC2BGcjgnY27ns/3iO6zfhAEpaM5qIOHguQ9u6wfBY7Wps54137MxJNNTiym5cXOaOHw6ExuET0Fnk1CJMIjBdw2nr/IUuwlIzYNmH8lB1xK4Wue2yZ6w+otveOz38sp5KIYV9YaEx+IPn4CPhN9Adb9iVVRFHynim9/ZfAb6+/AD6Jt4Kc/URFlJgrXv7T76/efTdZbw+EG0d/hUPXHR4VLvf8/hZ6nIz+uyM81egOI3lIiN6nobY8iN1KK3popcrMXMvl99EO/j3/DXHwpMZAJLAAAAABJRU5ErkJggg==" width="40" height="40"></image>
+						</svg>
+					</a>
+				</li>
+				<li><a href="http://twitter.com/Pardot" class="twitter" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="40" height="40" viewBox="0 0 40 40">
+							<image xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABFFBMVEUAAACZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZkAAAByZDQeAAAAWnRSTlMABUCEtt303iST7Pvh0hql/PisZCgEZ/Lncg9xCKb5hQoJwTPHExUuCzoOqP6DjAZwmz4Wox3p4/CJATwqYu/YA+rzxq0p5WBu62Nl5K9ZuXqd4vqAS9keL6Thx0t0AAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAcFJREFUOMuNlWd/gkAMxqOIrVtBK1ZFKtq9d+2ye+/9fP8PUg8Eg+t3zxvI3f9yJJcLRFyhsBJRo0B0IqKEQzRKk7E4gEQylUomOi/x2ORQLJ3JIqfp+YIwCnldyyGbSQ9yU0UYpWk+Ml02UJzqwypVmDWrf/FMzUS1Elhch2oP+x5bRZ1tU6mj0RweYLOBes9nFQ2LRshqoOrHAbVJI9VU0Y0oXTRtGiPbLLpZyqBGY1VDxjmPrGGNBy0jK84ohvLg3OzcPLPKiHXqIJ7zE7XQfS4uLcNcsVfzXppz8RCFoXncmrnuvmhwtLHpzWgIkwLdM7eAbZGnHZfDrueRdCgUgW/SHrB/MNc67IJH/kQeEVITBc8MHTvzJ6cut9z2wUJCpWjSN7fOzsFksLiTUUKqZ15wDpcMTCEAXl1z8CYIsq2Jbu963JkV3JoFQ3TPHOqME8Hw9BA9PHrcU4sNi/QogaXt5xOXewkUikg4O8LD17d3F/v4bHPOOUJeFF+a4+/74CdYS05RdMqs1Btq7fweLVK/SqLM5AuX/iSvgvzlkr6u8g1AvqVIN6lRbc8aaHsk3UhFlv7kWjNJN3uhMb+Pf350aAX1oRNSAAAAAElFTkSuQmCC" width="40" height="40"></image>
+						</svg>
+					</a>
+				</li>
+				<li><a href="http://www.facebook.com/pardot" class="facebook" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="40" height="40" viewBox="0 0 40 40">
+							<image xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAwFBMVEUAAACZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZkAAADdPvpYAAAAPnRSTlMABUCEtt303kEkk+z74dIapPz4rGQoBKVn8udyD3EIpvmFCgnBM8cTBnXE4A6oECpYomBRIHRmAmpbDVBURqxEYBcAAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAABiUlEQVQ4y42VZ1uDMBSFb1m10MmqdDEsRUXrqlvP//9ZkraPJiFUzie4z0vCHTkh4tXRdMO0AKtr6GcdalLPdgD0B8PhoF89OHZPiY3GE7ieH4TsJQx8z8VkOqpz5xFm8wUfWSxniM4lbBUjSTP544s0QbwSPl7DzFX/k5tYc9us1tgU6gSLDdZ/a8bYZNSgbIP4Nw+YBTWqMHHMaBQlOZ1QnkSHKk2R0kmlmO77MZmJP3h5dW2W5Q1XpdmE9cjGUlzgFkxbLrKEXc2B4wr9oDvUwIXrdEiDJy54X1EPmhbyMQ8a6fBF8LECn6R0fOhkIOBD4e65Al92O2HFAAaZfSG0w1FCC8K+SdaAVKAr7j2wCEMl2BXBIWTwdftWYe/bjxoobX3I+lPuYrW1lIwaZMlI5VGDrDzKgssgK3ithSqQtbA2FApwPxTVmM3/A+dszGqD+1WW5bfAZYfBpXHLo9D+cLU+ru0NoL2ltDapJtvLarZHRyPlz6jaSKm9NVNrs2firw9NvD5+AEzqQOrQJQkLAAAAAElFTkSuQmCC" width="40" height="40"></image>
+						</svg>
+					</a>
+				</li>
+				<li><a href="http://www.linkedin.com/company/pardot" class="linkedin" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="40" height="40" viewBox="0 0 40 40">
+							<image xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA51BMVEUAAACZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZkAAABP6Rb5AAAAS3RSTlMABUCEtt30JJPs++HSGqT8+KxkKASlZ/Lncg9xCKb5hQrBM8cTPGAb7R3OrUQcsNN8UZBahwJlvtnGfwwwoPBijnbXIcwt6dog4DhJkRBzAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAadJREFUOMuNVWdjgjAQPaOoOEHErThobe2mu3Zvff///zRRoFGD8j4QLrzk9kEkI8GSKS0NpLVUkiUoCpmsDiCXLxTyOf6iZzNKWrFUhmFWrKoQqlbFNFC2i5u8Wh2NZkveabUbqNfWaJ0uek5//XDf6aHbWTk8gDZU2TPUMJDUdAYYuWoH3REG/3d2MepTBPojdEM/oLkUCVeD71Gx3hvSFgx79WWUSnD8rb39sYrpwF7ko9zwDWwCB4cqMxtlkaMsmv7GhOetorqyiSyvA90IAnXEiccqYsvQE8RgBvLJ6dm52h8TjJJqbauoIEkpWIF44XnemC497+r65vbu/mEaEi2kSMtVA9HjNj7SE/BcgsAkzF01p1E6TxvEAC/hp3yaUFAQjde3d76EblIBaiKP7AdfPmWiUvUXl76BH1m1yhn8cmkGzGRnpPBEE0V4pIBHE0XApRRGE0UKpaKIJC6KgpdZexexLcpMKtwMY2xKFn+K3M0Zmy/3/cIlO2yFCPitEL+5Yrdr/AEQf6TEHlLxxx4tB2l79yAVUbLjjWaKPewFtvw+/gAawl1fQCUMTAAAAABJRU5ErkJggg==" width="40" height="40"></image>
+						</svg>
+					</a>
+				</li>
+				<li><a href="http://pinterest.com/pardot/" class="pinterest" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="40" height="40" viewBox="0 0 40 40">
+							<image xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABU1BMVEUAAACZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZkAAACm4qi4AAAAb3RSTlMABUCEtt70JJPs++HSGqX8+KxkKARn8udxDwim+YUKCcHdM8cTBlmi1cKJKj79/o0DRfqrNiCLmBDueWs9eCLJIQLkv15t0dc14la41MQW27x+s63LH4YU3/HgkS1OHdMBp8iW0HYHdC/McgxEgaTaljxSAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAgRJREFUOMuNVVd72kAQXEDGIAQIgalClhDBTsHBcQpOc3p3SXV6ryRh/v9b7kS+3J1POJoXrUYrnXZud45IRiqdMRayQHbByKRTNA+LuTwAs2BZBZMF+dxibFqxVIZdcao1flOrOhUb5VJRz1uqo9FsyUyr2UB96UBauwO36x18ebnrotNWXvYR9OL+pxfAl5Zp+wj78QX2Q/jimx2EHs2BF6Lzrw4EfZqLfoC/FRXrbo8OQc+tz1QqoUuHootStB/lxrLEHhmshKtHjx2XVWqU+R7l0JTIEwEwtIG1kyNBNpFjfZC3JaHWT2Hj9IjOnB3inCSznU9RGhXBjDdxfhZdAC4KvoI0ZeAI4hJ8urxlXSG6eg0rgneQIQNVQVzHDdoAbrLQwC3BV2FQYNYEcRt36C5wj4X38UDwNTOgbEGqeRvrtIq1HRbuYk96UMgSLOn+IR7RYzxh0VPgmfTAgpq4//wFveSi0SvgtZqoLE37b94C78bvnSE+kLq0UgzDAC5cNmQf5bHgxSjyMHyCMbA2P3/5KpNcHkXw6G++kQYuuLKFRCMT3/VEvoVqU9AYP/S8qClYm00k7id+6YmTSDHWuPJk/dbzvFnj0vT/ozCNromHK/G4JjeA5JaS2KTm2Z6n2R7NjHQylpnWJMZIuUpT3ZqnMdZMic2egx8fAT8+Au34+ANkKF/2b6hPtAAAAABJRU5ErkJggg==" width="40" height="40"></image>
+						</svg>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="site-info">
+			<ul class="inline">
+				<li>2015 Pardot, a Salesforce company. All rights reserved.</li>
+				<li><a href="http://www.pardot.com/company/legal/privacy-policy/">Privacy Policy</a></li>
+				<li><a href="http://www.pardot.com/company/legal/permission-based-marketing-policy/">Permission Based Marketing Policy</a></li>
+				<li><a href="http://www.pardot.com/company/legal/site-terms-of-service/">Website Terms of Use</a></li>
+				<li><a href="http://www.pardot.com/report-abuse/">Report Abuse</a></li>
+			</ul>
+		</div><!-- .site-info -->
+	</footer>
+
+<script type="text/javascript">
+	
+//full calendar
+
+$(document).ready(function() {
+    $('#calendar').fullCalendar({
+        googleCalendarApiKey: 'AIzaSyAKJ7Q-SRhyq9CZBHyw6aoYnwYXfEqXbhs',
+        eventSources: [
+            {
+                googleCalendarId: 'pardotadvocates@gmail.com',
+                className: 'OOH',
+                signup: 'Please login at the event time:',
+                text: 'Int. dialing codes found: <a class="read-more" href="http://www2.pardot.com/advocatesopenoffice" target="_blank">here</a>',
+                team: 'Client Advocates'
+            },
+            {
+                googleCalendarId: 'smh76g1ak9ht58n9gtv4fjolis@group.calendar.google.com',
+                className: 'TOH',
+                signup: 'Please register:',
+                text: 'dialing info will be emailed after event registration',
+                color: '#9adae0',
+                textColor: 'black',
+                team: 'Client Advocates'
+            },
+            {
+                googleCalendarId: '03g6lb5m6hb697vsbpgt0ov5d4@group.calendar.google.com',
+                className: 'newuser',
+                signup: 'Please register:',
+                text: 'dialing info will be emailed after event registration',
+                color: '#ffad46',
+                textColor: 'black',
+                team: 'Client Advocates'
+            },
+            {
+                googleCalendarId: '0a5evir5adnhu540jdrs0763lg@group.calendar.google.com',
+                className: 'training',
+                signup: 'Please register:',
+                text: 'dialing info will be emailed after event registration',
+                color: '#b3dc6c',
+                textColor: 'black',
+                team: 'Pardot Training & Certification'
+            },
+            {
+	            googleCalendarId: 'e9movuvl0obl4b4a5s107dplq0@group.calendar.google.com',
+	            className: 'introcall',
+	            signup: 'Please register:',
+	            text: 'dialing info will be emailed after event registration',
+	            color: '#f691b2',
+                textColor: 'black',
+                team: 'Client Advocates'
+            },
+            {
+	            googleCalendarId: '2johr6ok3gpr3f6tdjifaebnk0@group.calendar.google.com',
+	            text: 'dialing info will be emailed after event registration',
+	            signup: 'Please register:',
+	            className: 'webinars',
+	            color: '#b767ce',
+	            team: 'Pardot Marketing'
+            },
+            {
+	            googleCalendarId: 'i5u7lkkpc6o7qqruon6i2dcckg@group.calendar.google.com',
+	            text: 'Please only register if you will be attending DreamForce / World Tour conference',
+	            signup: 'Please register:',
+	            className: 'events',
+	            color: '#4ea96c',
+	            team: 'Pardot Marketing'
+            },
+            {
+	            googleCalendarId: '35fipfulhgr3r62kib3itej4v8@group.calendar.google.com',
+	            text: 'Please register to attend a user group in person',
+	            signup: 'Please register:',
+	            className: 'usergroup',
+	            color: '#fffd09',
+                textColor: 'black',
+                team: 'Pardot Marketing'
+            }
+        ],
+        eventRender: function (event, element) {
+        	element.attr('href', 'javascript:void(0);');
+            element.qtip({
+	            style: {
+		            classes: 'qtip-light qtip-rounded qtip-shadow'
+		            },
+		        position: {
+					my: 'bottom left',
+        	        at: 'top right',
+                    viewport: $(window),
+					adjust: {
+						mouse: false,
+						scroll: false,
+                        method: 'shift flip',
+                        resize: true
+							}
+    				},
+                show: {when:'click', solo: true},
+				hide: 'unfocus',
+	            content: {
+		            title: event.title,
+		            text: 
+		            '<p id="qtip">'+event.description+'</p>'
+		            +'<p id="qtip">' +event.source.signup+' <a class="read-more" href="'+event.location+'?ooh=y" target="_blank">here</a></p>'
+		            +'<p id="qtip">'+event.source.text+'</p>'
+		            +'<p id="qtip"><b>Delivered by: </b>'+event.source.team+'</p>'
+		            +'<p id="qtip"><b>Start: </b>'+moment(event.start).format("DD MMM YY - HH:mm")+'</p>'
+		            +'<p id="qtip"><b>End: </b>'+moment(event.end).format("DD MMM YY - HH:mm")+'</p>'
+		            },
+	            });
+    },
+    	viewRender:function(){
+	    	$('#sessionform input:checkbox').each(function(){
+              $(this).prop('checked', true);
+            });},
+    	businessHours: {start: "08:00:00", end: "18:00:00"},
+        contentHeight: 'auto',
+         //scrollTime: "06:00:00",
+        minTime: "06:00:00",
+       maxTime: "22:00:00",
+       	nowIndicator: true,
+        weekends: false,
+        timezone: 'local',
+        allDaySlot: false,
+	    defaultView: 'agendaWeek',
+	    header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'agendaWeek,month'
+			}
+    });
+});
+
+//calendar category toggle
+
+$('#sessionform input:checkbox').on('change',function(){
+	var name = $(this).attr('name');
+	if (this.checked)
+		{$("."+name).css({'visibility': 'visible'});}
+	if (!this.checked)
+		{$("."+name).css({'visibility': 'hidden'});}
+});
+
+//slide toggle calendar filters
+
+$('#slidetog').on('click', function(){$("#slide").slideToggle();});
+
+//category sticky to side of screen
+
+function sticky_relocate() {
+    var window_top = $(window).scrollTop();
+    var div_top = $('#sticky-anchor').offset().top;
+    var end = $('#calendar_stop').offset().top;
+    	
+    if (window_top < div_top) {
+	    $('#sticky').removeClass('stick');
+	    $('#slidetog').hide();
+	    $('#slide').show();	    
+    }
+    else if (window_top > end) {
+        $('#sticky').removeClass('stick');
+        $('#slide').hide();
+        $('#slidetog').hide();
+    }
+    else if (window_top > div_top) {
+	    $('#sticky').addClass('stick');
+        $('#slide').hide();	
+        $('#slidetog').show();	 
+    };
+};
+
+$(function () {
+    $(window).scroll(sticky_relocate);
+    sticky_relocate();
+});
+
+//local timezone notification 
+	
+$(function timezone() {
+	var tz = jstz.determine();
+	var timename = tz.name();
+	var timezone = moment.tz.zone(tz.name()).abbr(new Date().getTime());
+	$("#tmz").append("**Please note your browser has approximated your location near <span class='blue-font'>"+ timename + "</span>, setting the calendar's local timezone to <span class='blue-font'>" + timezone + "</span>.**");
+});
+
+//fancybox and wistia video player
+
+    $(document).ready(function() {
+     $(".fancybox").fancybox({
+        'type': 'iframe',
+        //'fitToView' : true,
+		'autoSize'  : true,
+		'width'    : 1000,
+		//'height'   : 800,
+		'openEffect' : false,
+		'closeEffect': false,
+		helpers: {
+			overlay: {
+				locked: false
+    }
+  }
+    });
+});
+
+var count = 0;
+var shown_videos = 12; 
+$.getJSON("https://api.wistia.com/v1/medias.json?api_password=9c3639e2ccc71cab740aff449ab77047d6f7ea7fa77097f0fac5b862f4fe5eb8&sort_by=created&sort_direction=0", function(data) {
+    $.each(data, function(index, video) {
+	    if(video.project.hashed_id == "kz5clc3mub")
+	    	{count++;
+			 if(count < shown_videos)
+			 	{
+			 	$('#player').append(
+				 	'<div class="video_box col-xs-12 col-sm-6 col-md-3 col-lg-3">'+
+				 			'<div class="video_name">'+video.name+'</div>'+
+				 			'<a class="video_thumb fancybox fancybox.iframe" href="https://fast.wistia.net/embed/iframe/'+video.hashed_id+'">'+
+				 				'<img src='+video.thumbnail.url.split("?")[0]+'>'+
+				 			'</a>'+
+				 			'<i class="fa fa-play-circle"></i>'+
+				 	'</div>'	
+			 		);
+			 	}
+			 else
+			 	{return false;}}
+})});    
+
+//success community web scraper
+
+var prod_id = "a1z30000006IDZ5AAO";
+$.getJSON('http://alloworigin.com/get?url=' + encodeURIComponent('https://success.salesforce.com/featuredGroupDetail?id=') + prod_id +  '&callback=?', function(data){
+        var feed = $(data.contents).find(".list-of-items");
+        $("#feed_output").append(feed);
+        var members = $(data.contents).find(".topic-title b").text();
+        $("#success_sub").append("Continue the conversation on our Success Community by asking questions, exchange experiences and best practices using Pardot and its integration with Salesforce CRM. Be one of the <span class='blue-font'>"+members+"</span> members already part of the discussion.");
+});
+
+//load images with salesforce domain and after web scrap
+
+$(window).bind("load",function(){
+$('div.user-pic img').each(function(){
+    $(this).attr('src', 'https://success.salesforce.com' + $(this).attr('src'));
+})});
+
+</script>
+
+</html>
