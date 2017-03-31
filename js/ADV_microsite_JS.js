@@ -21,21 +21,21 @@ $(function() {
 
 //full calendar
 
-var cal_api_password = 'AIzaSyAKJ7Q-SRhyq9CZBHyw6aoYnwYXfEqXbhs';
+var cal_api_password = '';
 
 $(document).ready(function() {
     $('#calendar').fullCalendar({
         googleCalendarApiKey: cal_api_password,
         eventSources: [
             {
-                googleCalendarId: 'pardotadvocates@gmail.com',
+                googleCalendarId: '',
                 className: 'OOH',
                 signup: 'Please login at the event time:',
                 text: 'Int. dialing codes found: <a class="read-more" href="http://www2.pardot.com/advocatesopenoffice" target="_blank">here</a>',
                 team: 'Client Advocates'
             },
             {
-                googleCalendarId: 'smh76g1ak9ht58n9gtv4fjolis@group.calendar.google.com',
+                googleCalendarId: '',
                 className: 'TOH',
                 signup: 'Please register:',
                 text: 'dialing info will be emailed after event registration',
@@ -44,7 +44,7 @@ $(document).ready(function() {
                 team: 'Client Advocates'
             },
             {
-                googleCalendarId: '03g6lb5m6hb697vsbpgt0ov5d4@group.calendar.google.com',
+                googleCalendarId: '',
                 className: 'newuser',
                 signup: 'Please register:',
                 text: 'dialing info will be emailed after event registration',
@@ -53,7 +53,7 @@ $(document).ready(function() {
                 team: 'Client Advocates'
             },
             {
-                googleCalendarId: '0a5evir5adnhu540jdrs0763lg@group.calendar.google.com',
+                googleCalendarId: '',
                 className: 'training',
                 signup: 'Please register:',
                 text: 'dialing info will be emailed after event registration',
@@ -62,7 +62,7 @@ $(document).ready(function() {
                 team: 'Pardot Training & Certification'
             },
             {
-	            googleCalendarId: 'e9movuvl0obl4b4a5s107dplq0@group.calendar.google.com',
+	            googleCalendarId: '',
 	            className: 'cert',
 	            signup: 'Please register:',
 	            text: 'dialing info will be emailed after event registration. <br>More information on Pardot certification can be found <a class="read-more" href="http://www.pardot.com/user-certification" target="_blank">here</a></br>',
@@ -71,7 +71,7 @@ $(document).ready(function() {
                 team: 'Pardot Training & Certification'
             },
             {
-	            googleCalendarId: '2johr6ok3gpr3f6tdjifaebnk0@group.calendar.google.com',
+	            googleCalendarId: '',
 	            text: 'dialing info will be emailed after event registration',
 	            signup: 'Please register:',
 	            className: 'webinars',
@@ -79,7 +79,7 @@ $(document).ready(function() {
 	            team: 'Pardot Marketing'
             },
             {
-	            googleCalendarId: 'i5u7lkkpc6o7qqruon6i2dcckg@group.calendar.google.com',
+	            googleCalendarId: '',
 	            text: 'Please only register if you will be attending DreamForce / World Tour conference',
 	            signup: 'Please register:',
 	            className: 'events',
@@ -87,7 +87,7 @@ $(document).ready(function() {
 	            team: 'Pardot Marketing'
             },
             {
-	            googleCalendarId: '35fipfulhgr3r62kib3itej4v8@group.calendar.google.com',
+	            googleCalendarId: '',
 	            text: 'Please register to attend a user group in person',
 	            signup: 'Please register:',
 	            className: 'usergroup',
@@ -239,7 +239,7 @@ $(function timezone() {
 var count = 0;
 var shown_videos = 12; 
 var playlist_ID = "kz5clc3mub";
-var video_api_password = "9c3639e2ccc71cab740aff449ab77047d6f7ea7fa77097f0fac5b862f4fe5eb8";
+var video_api_password = "";
 $.getJSON('https://api.wistia.com/v1/medias.json?api_password='+video_api_password+'&sort_by=created&sort_direction=0', function(data) {
     $.each(data, function(index, video) {
 	    if(video.project.hashed_id == playlist_ID)
